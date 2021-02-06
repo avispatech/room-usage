@@ -1,0 +1,7 @@
+{
+  "name": "Room Scheduler",
+  "description": "A simple way to schedule rooms",
+  "repository": "https://github.com/avispatech/room-usage",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["ruby", "rails", "scheduled"]
+}
