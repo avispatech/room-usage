@@ -1,0 +1,38 @@
+h1.text-center Room Scheduling
+
+
+- first_day = @days.first.starts_at
+- current_date = Time.zone.now.beginning_of_week
+.schedule
+  .header
+    .day M
+    .day T
+    .day W
+    .day T
+    .day F
+    .day S
+    .day S
+  .body
+    - loop do 
+      - break if current_date.wday == first_day.wday
+      .day.empty
+      - current_date += 1.day
+    - @days.each do |day|
+      - if [0,6].include? day.starts_at.wday 
+        .day.invalid
+          p = l(day.starts_at, format: :month)
+          p.day-number = l(day.starts_at, format: :day)
+      - else
+        = link_to day_path(day), class: 'day' do
+          -if day.shifts.count.positive?
+            .float-end
+              span.shift-pill = day.shifts.count
+          p = l(day.starts_at, format: :month)
+          p.day-number = l(day.starts_at, format: :day)
+          -if day.shifts.count.positive?
+            .float-end
+              - day.shifts.each do |s|
+                span.shift-pill[style="background-color: #{name_to_rgba(s.name)}"] = s.name[0].upcase
+    
+    
+

@@ -1,0 +1,29 @@
+h1.display-4 = l(@day.starts_at, format: :date)
+
+= link_to '<< Back to Calendar', days_path, class: 'btn btn-small btn-primary'
+.mb-5
+.row.day-schedule
+  .col.col-lg-6
+    - @locations.each do |loc|
+      h2 = loc.name
+      .list-group.mb-5
+        - loc.positions.each do |pos|
+          .list-group-item.list-group-item-action[class=(pos.taken?(@day) ? 'active' : '')]
+            - unless pos.taken?(@day)
+              .float-end Available
+            h3 #{loc.name} - #{pos.name}
+            - if pos.taken?(@day)
+              - shift = pos.taken(@day)
+              p Registered to #{shift.name}
+            - else
+              = form_with model: @shift, url: shifts_path, method: :post, class: 'row row-cols-lg-auto align-items-center' do |f|
+                .col-12
+                  .form-floating
+                    = f.text_field :name, placeholder: 'ej. Pedro Donoso', class: 'form-control'
+                    = f.hidden_field :day_id, value: @day.id
+                    = f.hidden_field :position_id, value: pos.id
+                    label Name
+                .col-12
+                  button.btn.btn-primary.btn-lg[type='submit'] Register
+
+
