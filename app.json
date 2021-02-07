@@ -9,7 +9,7 @@
   },
   "addons": [
     {
-      "plan": "heroku-postgres"
+      "plan": "heroku-postgresql"
     }
   ]
 }
