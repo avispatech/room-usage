@@ -1,24 +1,13 @@
-# README
+# ROOM SCHEDULER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Things you may want to cover:
+Oue company is working in Hybrid remote mode and we are looking to have different groups of people using the office space, but not at the same time.
 
-* Ruby version
+We tried to use a Shared Google Calendar, but it turned out more complicated than what we thought, this is just a nicer way to have a shared excel sheet.
 
-* System dependencies
+This one just saves the name, but for your own organization maybe you should use OAuth to verify your users.
 
-* Configuration
+Under the hood there is not much to see. Just a couple of classes: `Room`, `Day`, and `Shift`. After deploy, it starts with 3 months worth of days created and two rooms: `Room 1` and `Room 2`. If you want to change them, you'll have to do it via the console (that is `rails c`)
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
