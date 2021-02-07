@@ -2,6 +2,14 @@
   "name": "Room Scheduler",
   "description": "A simple way to schedule rooms",
   "repository": "https://github.com/avispatech/room-usage",
-  "logo": "https://room-usage.herokuapp.com/loho.png",
-  "keywords": ["ruby", "rails", "scheduled"]
+  "logo": "https://room-usage.herokuapp.com/logo.png",
+  "keywords": ["ruby", "rails", "scheduled"],
+  "scripts": {
+    "postdeploy": "rails db:migrate; rails db:seed"
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgres"
+    }
+  ]
 }
