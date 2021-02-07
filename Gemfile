@@ -25,9 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'devise'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
+# gem 'devise'
+# gem 'omniauth-google-oauth2'
+# gem 'omniauth-rails_csrf_protection'
 
 gem 'slim-rails'
 # Reduces boot times through caching; required in config/boot.rb
