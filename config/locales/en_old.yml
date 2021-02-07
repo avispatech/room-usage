@@ -31,9 +31,3 @@
 
 en:
   hello: "Hello world"
-
-  time:
-    formats:
-      month: '%B'
-      day: '%d'
-      date: "%A,  %B %-d, %Y"
